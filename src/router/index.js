@@ -10,7 +10,7 @@ const router = createRouter({
       name: 'home',
       component: Loader,
       meta: {
-        title: 'Portfolio | Paul Jaguin - Développeur Web',
+        title: 'Portfolio | Basudev Rout - Développeur Web',
         metaTags: [
           {
             rel: 'canonical',
@@ -18,20 +18,20 @@ const router = createRouter({
           },
           {
             name: 'title',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Développeur Web'
           },
           {
             name: 'description',
             content:
-              "Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Découvrez le portfolio de Basudev Rout, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             name: 'keywords',
-            content: 'portfolio, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
+            content: 'portfolio, Basudev Rout, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
           },
           {
             name: 'author',
-            content: 'Paul Jaguin'
+            content: 'Basudev Rout'
           },
           {
             name: 'robots',
@@ -51,11 +51,11 @@ const router = createRouter({
           },
           {
             name: 'apple-mobile-web-app-title',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Développeur Web'
           },
           {
             name: 'application-name',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Développeur Web'
           },
           {
             name: 'twitter:card',
@@ -63,12 +63,12 @@ const router = createRouter({
           },
           {
             name: 'twitter:title',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Développeur Web'
           },
           {
             name: 'twitter:description',
             content:
-              "Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Découvrez le portfolio de Basudev Rout, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             name: 'twitter:image',
@@ -76,7 +76,7 @@ const router = createRouter({
           },
           {
             name: 'twitter:image:alt',
-            content: 'Logo Portfolio Paul Jaguin'
+            content: 'Logo Portfolio Basudev Rout'
           },
           {
             property: 'og:type',
@@ -84,16 +84,16 @@ const router = createRouter({
           },
           {
             property: 'og:title',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Développeur Web'
           },
           {
             property: 'og:description',
             content:
-              "Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Découvrez le portfolio de Basudev Rout, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             property: 'og:site_name',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Développeur Web'
           },
           {
             property: 'og:url',
@@ -105,7 +105,7 @@ const router = createRouter({
           },
           {
             property: 'og:image:alt',
-            content: 'Logo Portfolio Paul Jaguin'
+            content: 'Logo Portfolio Basudev Rout'
           },
           {
             property: 'og:locale',
@@ -123,7 +123,7 @@ const router = createRouter({
       name: 'Office',
       component: Office,
       meta: {
-        title: 'Bureau | Paul Jaguin - Développeur Web',
+        title: 'Bureau | Basudev Rout - Développeur Web',
         metaTags: [
           {
             rel: 'canonical',
@@ -131,20 +131,20 @@ const router = createRouter({
           },
           {
             name: 'title',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Bureau | Basudev Rout - Développeur Web'
           },
           {
             name: 'description',
             content:
-              "Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Découvrez le bureau de Basudev Rout, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             name: 'keywords',
-            content: 'bureau, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
+            content: 'bureau, Basudev Rout, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
           },
           {
             name: 'author',
-            content: 'Paul Jaguin'
+            content: 'Basudev Rout'
           },
           {
             name: 'robots',
@@ -164,11 +164,11 @@ const router = createRouter({
           },
           {
             name: 'apple-mobile-web-app-title',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Bureau | Basudev Rout - Développeur Web'
           },
           {
             name: 'application-name',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Bureau | Basudev Rout - Développeur Web'
           },
           {
             name: 'twitter:card',
@@ -176,12 +176,12 @@ const router = createRouter({
           },
           {
             name: 'twitter:title',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Bureau | Basudev Rout - Développeur Web'
           },
           {
             name: 'twitter:description',
             content:
-              "Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Découvrez le bureau de Basudev Rout, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             name: 'twitter:image',
@@ -189,7 +189,7 @@ const router = createRouter({
           },
           {
             name: 'twitter:image:alt',
-            content: 'Logo Portfolio Paul Jaguin'
+            content: 'Logo Portfolio Basudev Rout'
           },
           {
             name: 'og:type',
@@ -197,16 +197,16 @@ const router = createRouter({
           },
           {
             name: 'og:title',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Bureau | Basudev Rout - Développeur Web'
           },
           {
             name: 'og:description',
             content:
-              "Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Découvrez le bureau de Basudev Rout, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             name: 'og:site_name',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Bureau | Basudev Rout - Développeur Web'
           },
           {
             name: 'og:url',
@@ -218,7 +218,7 @@ const router = createRouter({
           },
           {
             name: 'og:image:alt',
-            content: 'Logo Portfolio Paul Jaguin'
+            content: 'Logo Portfolio Basudev Rout'
           },
           {
             name: 'og:locale',
