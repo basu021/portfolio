@@ -11,7 +11,7 @@ const localeNames = {
 const props = defineProps({
   currentLocale: {
     type: String,
-    default: 'fr'
+    default: 'en'
   }
 })
 
@@ -20,16 +20,14 @@ const getFlagSrc = (locale) => {
   return `/img/icons/langs/flag-${locale}.webp`
 }
 
-// Compute the opposite locale
+// Since we only support English now, this component is effectively disabled
 const oppositeLocale = computed(() => {
-  return props.currentLocale === 'en' ? 'fr' : 'en'
+  return 'en'
 })
 
 const handleLanguageSwitch = () => {
-  const newLocale = props.currentLocale === 'en' ? 'fr' : 'en'
-  localStorage.setItem('currentLocale', newLocale)
-  locale.value = newLocale
-  location.reload()
+  // Language switching disabled - only English supported
+  return
 }
 </script>
 

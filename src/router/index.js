@@ -10,28 +10,28 @@ const router = createRouter({
       name: 'home',
       component: Loader,
       meta: {
-        title: 'Portfolio | Paul Jaguin - Développeur Web',
+        title: 'Portfolio | Basudev Rout - Database Administrator',
         metaTags: [
           {
             rel: 'canonical',
-            href: 'https://pauljaguin.com'
+            href: 'https://rbasu.in'
           },
           {
             name: 'title',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Database Administrator'
           },
           {
             name: 'description',
             content:
-              "Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Discover the portfolio of Basudev Rout, passionate Database Administrator, specializing in database management, optimization, and administration."
           },
           {
             name: 'keywords',
-            content: 'portfolio, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
+            content: 'portfolio, basudev rout, database administrator, DBA, database management, SQL, database optimization, data administration'
           },
           {
             name: 'author',
-            content: 'Paul Jaguin'
+            content: 'Basudev Rout'
           },
           {
             name: 'robots',
@@ -51,11 +51,11 @@ const router = createRouter({
           },
           {
             name: 'apple-mobile-web-app-title',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Database Administrator'
           },
           {
             name: 'application-name',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Database Administrator'
           },
           {
             name: 'twitter:card',
@@ -63,20 +63,20 @@ const router = createRouter({
           },
           {
             name: 'twitter:title',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Database Administrator'
           },
           {
             name: 'twitter:description',
             content:
-              "Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Discover the portfolio of Basudev Rout, passionate Database Administrator, specializing in database management, optimization, and administration."
           },
           {
             name: 'twitter:image',
-            content: 'https://pauljaguin.com/img/logo-portfolio-black.webp'
+            content: 'https://rbasu.in/img/logo-portfolio-black.webp'
           },
           {
             name: 'twitter:image:alt',
-            content: 'Logo Portfolio Paul Jaguin'
+            content: 'Logo Portfolio Basudev Rout'
           },
           {
             property: 'og:type',
@@ -84,32 +84,32 @@ const router = createRouter({
           },
           {
             property: 'og:title',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Database Administrator'
           },
           {
             property: 'og:description',
             content:
-              "Découvrez le portfolio de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Discover the portfolio of Basudev Rout, passionate Database Administrator, specializing in database management, optimization, and administration."
           },
           {
             property: 'og:site_name',
-            content: 'Portfolio | Paul Jaguin - Développeur Web'
+            content: 'Portfolio | Basudev Rout - Database Administrator'
           },
           {
             property: 'og:url',
-            content: 'https://pauljaguin.com'
+            content: 'https://rbasu.in'
           },
           {
             property: 'og:image',
-            content: 'https://pauljaguin.com/img/logo-portfolio-black.webp'
+            content: 'https://rbasu.in/img/logo-portfolio-black.webp'
           },
           {
             property: 'og:image:alt',
-            content: 'Logo Portfolio Paul Jaguin'
+            content: 'Logo Portfolio Basudev Rout'
           },
           {
             property: 'og:locale',
-            content: 'fr_FR'
+            content: 'en_US'
           },
           {
             property: 'og:locale:alternate',
@@ -123,28 +123,28 @@ const router = createRouter({
       name: 'Office',
       component: Office,
       meta: {
-        title: 'Bureau | Paul Jaguin - Développeur Web',
+        title: 'Office | Basudev Rout - Database Administrator',
         metaTags: [
           {
             rel: 'canonical',
-            href: 'https://pauljaguin.com/office'
+            href: 'https://rbasu.in/office'
           },
           {
             name: 'title',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Office | Basudev Rout - Database Administrator'
           },
           {
             name: 'description',
             content:
-              "Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Discover the office of Basudev Rout, passionate Database Administrator, specializing in database management, optimization, and administration."
           },
           {
             name: 'keywords',
-            content: 'bureau, paul jaguin, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
+            content: 'office, basudev rout, database administrator, DBA, database management, SQL, database optimization, data administration'
           },
           {
             name: 'author',
-            content: 'Paul Jaguin'
+            content: 'Basudev Rout'
           },
           {
             name: 'robots',
@@ -164,11 +164,11 @@ const router = createRouter({
           },
           {
             name: 'apple-mobile-web-app-title',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Office | Basudev Rout - Database Administrator'
           },
           {
             name: 'application-name',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Office | Basudev Rout - Database Administrator'
           },
           {
             name: 'twitter:card',
@@ -176,20 +176,20 @@ const router = createRouter({
           },
           {
             name: 'twitter:title',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Office | Basudev Rout - Database Administrator'
           },
           {
             name: 'twitter:description',
             content:
-              "Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Discover the office of Basudev Rout, passionate Database Administrator, specializing in database management, optimization, and administration."
           },
           {
             name: 'twitter:image',
-            content: 'https://pauljaguin.com/img/logo-portfolio-black.webp'
+            content: 'https://rbasu.in/img/logo-portfolio-black.webp'
           },
           {
             name: 'twitter:image:alt',
-            content: 'Logo Portfolio Paul Jaguin'
+            content: 'Logo Portfolio Basudev Rout'
           },
           {
             name: 'og:type',
@@ -197,32 +197,32 @@ const router = createRouter({
           },
           {
             name: 'og:title',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Office | Basudev Rout - Database Administrator'
           },
           {
             name: 'og:description',
             content:
-              "Découvrez le bureau de Paul Jaguin, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
+              "Discover the office of Basudev Rout, passionate Database Administrator, specializing in database management, optimization, and administration."
           },
           {
             name: 'og:site_name',
-            content: 'Bureau | Paul Jaguin - Développeur Web'
+            content: 'Office | Basudev Rout - Database Administrator'
           },
           {
             name: 'og:url',
-            content: 'https://pauljaguin.com/office'
+            content: 'https://rbasu.in/office'
           },
           {
             name: 'og:image',
-            content: 'https://pauljaguin.com/img/logo-portfolio-black.webp'
+            content: 'https://rbasu.in/img/logo-portfolio-black.webp'
           },
           {
             name: 'og:image:alt',
-            content: 'Logo Portfolio Paul Jaguin'
+            content: 'Logo Portfolio Basudev Rout'
           },
           {
             name: 'og:locale',
-            content: 'fr_FR'
+            content: 'en_US'
           },
           {
             name: 'og:locale:alternate',

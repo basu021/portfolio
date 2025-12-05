@@ -12,13 +12,12 @@ const volume = computed(() => volumeStore.volume)
 const { locale } = useI18n()
 
 const localeNames = {
-  en: 'EN',
-  fr: 'FR'
+  en: 'EN'
 }
 
 // Initialize refs
 const isFullScreen = ref(false)
-const originalTitle = ref('Mode plein écran')
+const originalTitle = ref('Fullscreen mode')
 const isVolumeSettingsDisplayed = ref(false)
 const isLanguageSettingsDisplayed = ref(false)
 const musicModalRef = ref(null)
@@ -29,7 +28,7 @@ const enterFullScreen = () => {
   if (isFullScreen.value) {
     // Exit full-screen mode
     document.exitFullscreen()
-    originalTitle.value = 'Mode plein écran'
+    originalTitle.value = 'Fullscreen mode'
     isFullScreen.value = false
   } else {
     // Enter full-screen mode only if the device is not a mobile device
@@ -42,7 +41,7 @@ const enterFullScreen = () => {
     } else if (document.documentElement.msRequestFullscreen) {
       document.documentElement.msRequestFullscreen()
     }
-    originalTitle.value = 'Quitter le mode plein écran'
+    originalTitle.value = 'Exit fullscreen mode'
     isFullScreen.value = true
   }
 }
@@ -97,8 +96,8 @@ const flagSrc = computed(() => {
         @click="toggleLanguageModal"
       />
     </div>
-    <img class="w-4 h-4 cursor-pointer" src="/img/icons/full-screen-icon-sm.webp" alt="Mode plein écran" :title="originalTitle" @click="enterFullScreen" />
-    <img class="w-4 h-4 mt-px cursor-pointer" :src="volumeIconSrc" alt="Gestion du volume" title="Gestion du volume" @click.stop="toggleMusicModal" />
+    <img class="w-4 h-4 cursor-pointer" src="/img/icons/full-screen-icon-sm.webp" alt="Fullscreen mode" :title="originalTitle" @click="enterFullScreen" />
+    <img class="w-4 h-4 mt-px cursor-pointer" :src="volumeIconSrc" alt="Volume control" title="Volume control" @click.stop="toggleMusicModal" />
     <MusicVolumeModal v-if="isVolumeSettingsDisplayed" ref="musicModalRef" />
     <LanguageModal v-if="isLanguageSettingsDisplayed" :currentLocale="currentLocale" />
     <NotificationModal class="md:block z-fmax" />

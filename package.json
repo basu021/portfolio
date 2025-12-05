@@ -2,9 +2,9 @@
   "name": "portfolio",
   "version": "1.0.1",
   "private": false,
-  "author": "Paul Jaguin <paul@rocketegg.systems>",
+  "author": "Basudev Rout <basudevrout2001@gmail.com>",
   "license": "MIT",
-  "homepage": "https://pauljaguin.com",
+  "homepage": "https://rbasu.in",
   "scripts": {
     "dev": "vite --host",
     "sass": "sass --watch sass/main.scss:css/main.css",

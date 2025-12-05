@@ -30,7 +30,7 @@
     "CDM": "CDM",
     "PDM": "PDM",
     "years": "years old",
-    "webdev": "Web developer",
+    "webdev": "Database Administrator",
     "textDocument": "Text Document",
     "list": "List",
     "modifications": "Modifications",
@@ -132,14 +132,14 @@
       },
       "legal": {
         "title": "Legal notices",
-        "firstParagraph": "In accordance with the provisions of Law No. 2004-575 of June 21, 2004, for confidence in the digital economy, users of the Portfolio - Paul Jaguin website are informed of the identity of the various parties involved in its creation and monitoring.",
+        "firstParagraph": "In accordance with the provisions of Law No. 2004-575 of June 21, 2004, for confidence in the digital economy, users of the Portfolio - Basudev Rout website are informed of the identity of the various parties involved in its creation and monitoring.",
         "edit": "Site editing",
-        "secondParagraph": "This site, accessible at the URL https://pauljaguin.com (the « Site »), is edited by:",
-        "thirdParagraph": "Paul Jaguin, residing at 202 Boulevard de Charonne, 75020 PARIS, of French nationality (France), born on 09/23/1999.",
+        "secondParagraph": "This site, accessible at the URL https://rbasu.in (the « Site »), is edited by:",
+        "thirdParagraph": "Basudev Rout, residing at Bhubaneswar, India, of Indian nationality (India), born on 04/17/2001.",
         "hosting": "Hosting",
         "fourthParagraph": "The Site is hosted by Hostinger International LTD, which can be contacted at the following address: https://www.hostinger.fr/contact",
         "dirPublication": "Publication director",
-        "fifthParagraph": "The Publication Director is: Paul Jaguin.",
+        "fifthParagraph": "The Publication Director is: Basudev Rout.",
         "contact": "Contact",
         "sixthParagraph": "For any questions, information about the products presented on the Site, or regarding the Site itself, you can leave a message at the following email address:"
       }
