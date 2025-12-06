@@ -2,29 +2,51 @@
   "en": {
     "education": [
       {
-        "degree": "B. TECH",
-        "institution": "BPUT",
-        "year": "September 2023 - September 2026"
+        "degree": "Bachelor of Technology (Computer Science / IT)",
+        "institution": "Krupajal Engineering College",
+        "year": "2023 - Present",
+        "description": "Pursuing B.Tech with focus on database systems and backend technologies."
       },
       {
-        "degree": "DIPLOMA (INFORMATION TECHNOLOGY)",
+        "degree": "Diploma in Information Technology",
         "institution": "Government Polytechnic, Bhubaneswar",
-        "year": "August 2019 - October 2022",
-        "description": "IoT Project on 'Protection from Advance phishing methods'. Face based attendance system using Amazon Rekognition."
+        "year": "2019 - 2022",
+        "description": "Projects included IoT-based phishing protection system and a face-recognition attendance system." 
       }
     ],
     "workExperience": [
       {
-        "jobTitle": "DATABASE ADMINISTRATOR",
-        "company": "Odisha State Datacenter",
-        "year": "January 2023 - Present",
+        "jobTitle": "Database Administrator",
+        "company": "Prodevans Technologies",
+        "year": "Aug 2025 - Present",
+        "location": "Bhubaneswar, Odisha, India",
         "responsibilities": [
-          "Managed clustered and standalone production databases including MySQL, PostgreSQL, EDB",
-          "Designed and implemented High Availability (HA) clusters like MySQL InnoDB Cluster, MySQL NDB Cluster, and EDB Postgres HA, reducing unplanned downtime by 70% and ensuring 99.999% uptime",
-          "Enforced robust data security via access controls, encryption, and authentication, leading to zero security incidents and full compliance with internal audit standards",
-          "Automated backup strategies, reducing backup execution time by 40% and improving recovery time objectives by 50%",
-          "Monitored and optimized database performance, improving query response times by 35% and reducing slow queries by 60%",
-          "Provided technical support to end-users and stakeholders, increasing database adoption and reducing access-related tickets from 2 hours to 20 minutes, enhancing overall system availability"
+          "Managing MySQL, PostgreSQL and enterprise databases in production environments.",
+          "High availability configuration, performance tuning and backup strategy optimization.",
+          "Database security, auditing and automation for reliability and uptime."
+        ]
+      },
+      {
+        "jobTitle": "Database Administrator",
+        "company": "Omnilink Technology Pvt. Ltd.",
+        "year": "Jan 2023 - Aug 2025",
+        "location": "Bhubaneswar, Odisha, India",
+        "responsibilities": [
+          "Linux-based database administration covering MySQL, PostgreSQL, EDB and MSSQL.",
+          "Shell scripting automation for backup, monitoring and reporting tasks.",
+          "Performance tuning, query optimization and enterprise database support.",
+          "Handled tasks similar to a combined System Administrator + DBA role."
+        ]
+      },
+      {
+        "jobTitle": "Web Developer Intern",
+        "company": "Livinart Technologies",
+        "year": "Oct 2022 - Jan 2023",
+        "location": "Remote / Bhubaneswar, India",
+        "responsibilities": [
+          "Frontend development using HTML, CSS, JavaScript.",
+          "Backend development tasks with PHP and Laravel.",
+          "Database design and MySQL-based backend integration for web applications."
         ]
       }
     ]
