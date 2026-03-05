@@ -48,8 +48,46 @@ const volumeStore = useVolumeStore()
 const currentTrack = ref(props.playlist[0])
 const isPlaying = ref(false)
 const currentTime = ref(0)
-const trackTime = ref(0)
 let audioElement = null
+
+const getAudioFile = (track) => `/musics/${track.id}.mp3`
+const getSpotifyTrackUrl = (track) => `https://open.spotify.com/track/${track.id}`
+
+const localTrackExists = async (audioFile) => {
+  try {
+    const response = await fetch(audioFile, { method: 'HEAD' })
+    return response.ok
+  } catch {
+    return false
+  }
+}
+
+const stopCurrentLocalTrack = () => {
+  const currentAudioFile = getAudioFile(currentTrack.value)
+  volumeStore.pauseAudio(currentAudioFile)
+  volumeStore.resetAudio(currentAudioFile)
+  currentTime.value = 0
+
+  if (audioElement) {
+    audioElement.removeEventListener('timeupdate', updateCurrentTime)
+    audioElement = null
+  }
+}
+
+const startCurrentTrack = async () => {
+  const audioFile = getAudioFile(currentTrack.value)
+  const hasLocalTrack = await localTrackExists(audioFile)
+
+  if (hasLocalTrack) {
+    volumeStore.playAudio(audioFile)
+    audioElement = volumeStore.audioElements[audioFile]
+    audioElement.addEventListener('timeupdate', updateCurrentTime)
+    return
+  }
+
+  isPlaying.value = false
+  window.open(getSpotifyTrackUrl(currentTrack.value), '_blank', 'noopener,noreferrer')
+}
 
 const updateCurrentTime = () => {
   if (audioElement) {
@@ -60,31 +98,18 @@ const updateCurrentTime = () => {
   }
 }
 
-const togglePlay = () => {
+const togglePlay = async () => {
   isPlaying.value = !isPlaying.value
-  const audioFile = '/musics/' + currentTrack.value.id + '.mp3'
   if (isPlaying.value) {
-    volumeStore.playAudio(audioFile)
-    audioElement = volumeStore.audioElements[audioFile]
-    audioElement.addEventListener('timeupdate', updateCurrentTime)
+    await startCurrentTrack()
   } else {
-    volumeStore.pauseAudio(audioFile)
-    if (audioElement) {
-      audioElement.removeEventListener('timeupdate', updateCurrentTime)
-    }
+    stopCurrentLocalTrack()
   }
 }
 
-const previousTrack = () => {
+const previousTrack = async () => {
   const currentIndex = props.playlist.findIndex((track) => track.id === currentTrack.value.id)
-  const currentAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
-  volumeStore.pauseAudio(currentAudioFile)
-  volumeStore.resetAudio(currentAudioFile)
-  currentTime.value = 0
-
-  if (audioElement) {
-    audioElement.removeEventListener('timeupdate', updateCurrentTime)
-  }
+  stopCurrentLocalTrack()
 
   if (currentIndex === 0) {
     currentTrack.value = props.playlist[props.playlist.length - 1]
@@ -92,24 +117,14 @@ const previousTrack = () => {
     currentTrack.value = props.playlist[currentIndex - 1]
   }
 
-  const newAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
   if (isPlaying.value) {
-    volumeStore.playAudio(newAudioFile)
-    audioElement = volumeStore.audioElements[newAudioFile]
-    audioElement.addEventListener('timeupdate', updateCurrentTime)
+    await startCurrentTrack()
   }
 }
 
-const nextTrack = () => {
+const nextTrack = async () => {
   const currentIndex = props.playlist.findIndex((track) => track.id === currentTrack.value.id)
-  const currentAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
-  volumeStore.pauseAudio(currentAudioFile)
-  volumeStore.resetAudio(currentAudioFile)
-  currentTime.value = 0
-
-  if (audioElement) {
-    audioElement.removeEventListener('timeupdate', updateCurrentTime)
-  }
+  stopCurrentLocalTrack()
 
   if (currentIndex === props.playlist.length - 1) {
     currentTrack.value = props.playlist[0]
@@ -117,11 +132,8 @@ const nextTrack = () => {
     currentTrack.value = props.playlist[currentIndex + 1]
   }
 
-  const newAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
   if (isPlaying.value) {
-    volumeStore.playAudio(newAudioFile)
-    audioElement = volumeStore.audioElements[newAudioFile]
-    audioElement.addEventListener('timeupdate', updateCurrentTime)
+    await startCurrentTrack()
   }
 }
 
@@ -137,23 +149,13 @@ function formatTime(ms) {
 // watch the  trackToggled prop to play the track if it's different from the current track
 watch(
   () => props.trackToggled,
-  (newTrack) => {
+  async (newTrack) => {
     if (newTrack !== currentTrack.value.id) {
-      const currentAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
-      volumeStore.pauseAudio(currentAudioFile)
-      volumeStore.resetAudio(currentAudioFile)
-      currentTime.value = 0
-
-      if (audioElement) {
-        audioElement.removeEventListener('timeupdate', updateCurrentTime)
-      }
+      stopCurrentLocalTrack()
 
       currentTrack.value = props.playlist.find((track) => track.id === newTrack)
-      const newAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
       if (isPlaying.value) {
-        volumeStore.playAudio(newAudioFile)
-        audioElement = volumeStore.audioElements[newAudioFile]
-        audioElement.addEventListener('timeupdate', updateCurrentTime)
+        await startCurrentTrack()
       }
     }
   }
@@ -164,10 +166,7 @@ onUnmounted(() => {
     audioElement.removeEventListener('timeupdate', updateCurrentTime)
   }
   // Reset component state if window is closed
-  const currentAudioFile = '/musics/' + currentTrack.value.id + '.mp3'
-  volumeStore.pauseAudio(currentAudioFile)
-  volumeStore.resetAudio(currentAudioFile)
-  currentTime.value = 0
+  stopCurrentLocalTrack()
 })
 </script>
 
