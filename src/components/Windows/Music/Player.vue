@@ -1,6 +1,6 @@
 <template>
-  <div class="absolute bottom-0 w-full bg-player h-14 shadow-inner">
-    <div class="flex items-center justify-between h-full px-2">
+  <div class="absolute bottom-0 w-full bg-player shadow-inner" :class="spotifyEmbedUrl ? 'h-56' : 'h-14'">
+    <div class="flex items-center justify-between h-14 px-2">
       <div class="w-1/3">
         <div class="flex items-center gap-2">
           <img v-if="currentTrack.album && currentTrack.album.images" :src="currentTrack.album.images[0].url" alt="cover album musique" class="w-10 h-10 rounded-sm" />
@@ -29,6 +29,17 @@
         <p class="text-xs font-trebuchet-pixel text-center">{{ formatTime(currentTime) }} / {{ formatTime(currentTrack.duration_ms) }}</p>
       </div>
     </div>
+    <div v-if="spotifyEmbedUrl" class="px-3 pb-3">
+      <iframe
+        :src="spotifyEmbedUrl"
+        width="100%"
+        height="152"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </div>
   </div>
 </template>
 
@@ -48,10 +59,11 @@ const volumeStore = useVolumeStore()
 const currentTrack = ref(props.playlist[0])
 const isPlaying = ref(false)
 const currentTime = ref(0)
+const spotifyEmbedUrl = ref('')
 let audioElement = null
 
 const getAudioFile = (track) => `/musics/${track.id}.mp3`
-const getSpotifyTrackUrl = (track) => `https://open.spotify.com/track/${track.id}`
+const getSpotifyEmbedUrl = (track) => `https://open.spotify.com/embed/track/${track.id}`
 
 const localTrackExists = async (audioFile) => {
   try {
@@ -72,6 +84,8 @@ const stopCurrentLocalTrack = () => {
     audioElement.removeEventListener('timeupdate', updateCurrentTime)
     audioElement = null
   }
+
+  spotifyEmbedUrl.value = ''
 }
 
 const startCurrentTrack = async () => {
@@ -85,8 +99,7 @@ const startCurrentTrack = async () => {
     return
   }
 
-  isPlaying.value = false
-  window.open(getSpotifyTrackUrl(currentTrack.value), '_blank', 'noopener,noreferrer')
+  spotifyEmbedUrl.value = getSpotifyEmbedUrl(currentTrack.value)
 }
 
 const updateCurrentTime = () => {
