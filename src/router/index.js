@@ -10,7 +10,11 @@ const router = createRouter({
       name: 'home',
       component: Loader,
       meta: {
+<<<<<<< Updated upstream
         title: 'Portfolio | Basudev Rout - Développeur Web',
+=======
+        title: 'Portfolio | Basudev Rout - Database Administrator - Bhubaneeshwar, Odisha, India',
+>>>>>>> Stashed changes
         metaTags: [
           {
             rel: 'canonical',
@@ -18,16 +22,28 @@ const router = createRouter({
           },
           {
             name: 'title',
+<<<<<<< Updated upstream
             content: 'Portfolio | Basudev Rout - Développeur Web'
+=======
+            content: 'Portfolio | Basudev Rout - Database Administrator - Bhubaneeshwar, Odisha, India'
+>>>>>>> Stashed changes
           },
           {
             name: 'description',
             content:
+<<<<<<< Updated upstream
               "Découvrez le portfolio de Basudev Rout, développeur web full stack passionné, Création de sites et applications web et mobiles avec JS, PHP, SQL et leurs frameworks, ainsi qu'en DevOps."
           },
           {
             name: 'keywords',
             content: 'portfolio, Basudev Rout, développeur web, full stack, sites web, applications web, applications mobiles, JS, PHP, SQL, ORM, frameworks, DevOps'
+=======
+              "Discover the portfolio of Basudev Rout, passionate Database Administrator from Bhubaneeshwar, Odisha, India, specializing in database management, optimization, and administration."
+          },
+          {
+            name: 'keywords',
+            content: 'portfolio, basudev rout, database administrator, DBA, database management, SQL, database optimization, data administration,basu021'
+>>>>>>> Stashed changes
           },
           {
             name: 'author',
