@@ -18,7 +18,7 @@ const router = createRouter({
         metaTags: [
           {
             rel: 'canonical',
-            href: 'https://pauljaguin.com'
+            href: 'https://rbasu.in'
           },
           {
             name: 'title',
