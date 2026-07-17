@@ -19,7 +19,7 @@
     />
     <DesktopAppsLayout
       :entities="entities"
-      @toggle-MyProjects="openWindow('myProjects')"
+      @toggle-myProjects="openWindow('myProjects')"
       @toggle-contact="openWindow('contact')"
       @toggle-myCV="openWindow('myCV')"
       @toggle-music="openWindow('music')"

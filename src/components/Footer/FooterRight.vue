@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useVolumeStore } from '@/stores/volumeStore'
 import { useI18n } from 'vue-i18n'
+import { useLocaleStore } from '@/stores/localeStore'
 import CurrentTime from './CurrentTime.vue'
 import NotificationModal from '@/components/Modals/NotificationModal.vue'
 import MusicVolumeModal from '@/components/Modals/MusicVolumeModal.vue'
@@ -10,9 +11,13 @@ import LanguageModal from '@/components/Modals/LanguageModal.vue'
 const volumeStore = useVolumeStore()
 const volume = computed(() => volumeStore.volume)
 const { locale } = useI18n()
+const localeStore = useLocaleStore()
 
 const localeNames = {
-  en: 'EN'
+  en: 'EN',
+  fr: 'FR',
+  hi: 'HI',
+  or: 'OR'
 }
 
 // Initialize refs
@@ -21,8 +26,8 @@ const originalTitle = ref('Fullscreen mode')
 const isVolumeSettingsDisplayed = ref(false)
 const isLanguageSettingsDisplayed = ref(false)
 const musicModalRef = ref(null)
-const storedLocale = localStorage.getItem('currentLocale')
-const currentLocale = ref(storedLocale || locale.value)
+
+const currentLocale = computed(() => localeStore.currentLocale)
 
 const enterFullScreen = () => {
   if (isFullScreen.value) {
