@@ -163,7 +163,7 @@ watch([userEmail, userMessage, emailSubject], ([newUserEmail, newUserMessage, ne
         <input
           type="text"
           class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none placeholder:text-black"
-          placeholder="jaguinpaul@gmail.com"
+          placeholder="basudevrout2001@gmail.com"
           readonly="readonly"
         />
       </label>
@@ -176,7 +176,7 @@ watch([userEmail, userMessage, emailSubject], ([newUserEmail, newUserMessage, ne
           v-model="userEmail"
           type="email"
           class="w-full h-5 border border-input-blue p-1.5 text-xs outline-none font-trebuchet-pixel"
-          placeholder="jean_doe@wanadoo.com"
+          placeholder="example@gmail.com"
         />
       </label>
       <label class="w-full flex gap-2">

@@ -2,7 +2,6 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useVolumeStore } from '@/stores/volumeStore'
 import { useI18n } from 'vue-i18n'
-import { useLocaleStore } from '@/stores/localeStore'
 import CurrentTime from './CurrentTime.vue'
 import NotificationModal from '@/components/Modals/NotificationModal.vue'
 import MusicVolumeModal from '@/components/Modals/MusicVolumeModal.vue'
@@ -11,29 +10,25 @@ import LanguageModal from '@/components/Modals/LanguageModal.vue'
 const volumeStore = useVolumeStore()
 const volume = computed(() => volumeStore.volume)
 const { locale } = useI18n()
-const localeStore = useLocaleStore()
 
 const localeNames = {
-  en: 'EN',
-  fr: 'FR',
-  hi: 'HI',
-  or: 'OR'
+  en: 'EN'
 }
 
 // Initialize refs
 const isFullScreen = ref(false)
-const originalTitle = ref('Mode plein écran')
+const originalTitle = ref('Fullscreen mode')
 const isVolumeSettingsDisplayed = ref(false)
 const isLanguageSettingsDisplayed = ref(false)
 const musicModalRef = ref(null)
-
-const currentLocale = computed(() => localeStore.currentLocale)
+const storedLocale = localStorage.getItem('currentLocale')
+const currentLocale = ref(storedLocale || locale.value)
 
 const enterFullScreen = () => {
   if (isFullScreen.value) {
     // Exit full-screen mode
     document.exitFullscreen()
-    originalTitle.value = 'Mode plein écran'
+    originalTitle.value = 'Fullscreen mode'
     isFullScreen.value = false
   } else {
     // Enter full-screen mode only if the device is not a mobile device
@@ -46,7 +41,7 @@ const enterFullScreen = () => {
     } else if (document.documentElement.msRequestFullscreen) {
       document.documentElement.msRequestFullscreen()
     }
-    originalTitle.value = 'Quitter le mode plein écran'
+    originalTitle.value = 'Exit fullscreen mode'
     isFullScreen.value = true
   }
 }
@@ -101,8 +96,8 @@ const flagSrc = computed(() => {
         @click="toggleLanguageModal"
       />
     </div>
-    <img class="w-4 h-4 cursor-pointer" src="/img/icons/full-screen-icon-sm.webp" alt="Mode plein écran" :title="originalTitle" @click="enterFullScreen" />
-    <img class="w-4 h-4 mt-px cursor-pointer" :src="volumeIconSrc" alt="Gestion du volume" title="Gestion du volume" @click.stop="toggleMusicModal" />
+    <img class="w-4 h-4 cursor-pointer" src="/img/icons/full-screen-icon-sm.webp" alt="Fullscreen mode" :title="originalTitle" @click="enterFullScreen" />
+    <img class="w-4 h-4 mt-px cursor-pointer" :src="volumeIconSrc" alt="Volume control" title="Volume control" @click.stop="toggleMusicModal" />
     <MusicVolumeModal v-if="isVolumeSettingsDisplayed" ref="musicModalRef" />
     <LanguageModal v-if="isLanguageSettingsDisplayed" :currentLocale="currentLocale" />
     <NotificationModal class="md:block z-fmax" />

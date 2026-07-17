@@ -7,7 +7,7 @@ import cvData from '@/data/cv-data.json'
 import WorkExperienceItem from './WorkExperienceItem.vue'
 
 const localeStore = useLocaleStore()
-const birthdate = new Date(1999, 8, 23) // September 23, 1999 8 is the month index starting at 0
+const birthdate = new Date(2001, 3, 17) // April 17, 2001 3 is the month index starting at 0
 const today = new Date()
 let age = ref(today.getFullYear() - birthdate.getFullYear())
 
@@ -47,8 +47,8 @@ const experienceData = computed(() => {
   </div>
   <a
     rel="noopener"
-    :href="'pdf/CV_paul_jaguin_' + localeStore.currentLocale + '.pdf'"
-    :download="'CV_paul_jaguin_' + localeStore.currentLocale + '.pdf'"
+    :href="'pdf/CV_basudev_rout_' + localeStore.currentLocale + '.pdf'"
+    :download="'CV_basudev_rout_' + localeStore.currentLocale + '.pdf'"
     class="absolute bottom-2 right-1 md:right-4 h-6 text-xxs border border-twilight-blue bg-button-submit rounded-sm leading-loose px-3 hover:shadow-button-submit-hover cursor-pointer active:bg-button-clicked"
   >
     {{ $t('buttons.downloadCV') }}

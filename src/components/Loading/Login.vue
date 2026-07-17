@@ -77,33 +77,27 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useLocaleStore } from '@/stores/localeStore'
 import LoginForm from '@/components/Loading/LoginForm.vue'
 import ContentCenter from '@/layouts/ContentCenter.vue'
 
-const localeStore = useLocaleStore()
 const { locale } = useI18n()
 const dropdownOpen = ref(false)
-// include Hindi and Odia in available locales
-const locales = ['en', 'fr', 'hi', 'or']
+const locales = ['en']
 const localeNames = {
-  en: 'English',
-  fr: 'Français',
-  hi: 'हिन्दी',
-  or: 'ଓଡ଼ିଆ'
+  en: 'English'
 }
 
-// Use central store's currentLocale (reactive)
-const currentLocale = computed(() => localeStore.currentLocale)
+// Initialize currentLocale from localStorage if it exists, otherwise use the default locale
+const storedLocale = localStorage.getItem('currentLocale')
+const currentLocale = ref(storedLocale || locale.value)
 
-// Ensure i18n locale matches store on load
+// Set the initial locale value
 locale.value = currentLocale.value
 
-// Keep i18n in sync if store changes elsewhere
+// Watch for changes in currentLocale and update localStorage and locale.value
 watch(currentLocale, (newLocale) => {
-  if (locale.value !== newLocale) {
-    locale.value = newLocale
-  }
+  localStorage.setItem('currentLocale', newLocale)
+  locale.value = newLocale
 })
 
 const flagSrc = computed(() => {
@@ -115,8 +109,7 @@ const toggleDropdown = () => {
 }
 
 const changeLocale = (newLocale) => {
-  // use store action to update locale and i18n
-  localeStore.setLocale(newLocale)
+  currentLocale.value = newLocale
   dropdownOpen.value = false
 }
 
