@@ -1,5 +1,6 @@
 {
   "en": {
+    "summary": "Database Administrator and Full Stack Developer with expertise in managing enterprise databases, system administration, and web application development. Proficient in MySQL, PostgreSQL, MSSQL, and Linux environments with strong focus on database optimization, security, and automation.",
     "education": [
       {
         "degree": "Bachelor of Technology (Computer Science / IT)",
@@ -11,7 +12,7 @@
         "degree": "Diploma in Information Technology",
         "institution": "Government Polytechnic, Bhubaneswar",
         "year": "2019 - 2022",
-        "description": "Projects included IoT-based phishing protection system and a face-recognition attendance system." 
+        "description": "Projects included IoT-based phishing protection system and a face-recognition attendance system."
       }
     ],
     "workExperience": [
@@ -49,6 +50,35 @@
           "Database design and MySQL-based backend integration for web applications."
         ]
       }
+    ],
+    "skills": {
+      "databases": ["MySQL", "PostgreSQL", "MSSQL", "EDB", "Database Design"],
+      "systemAdmin": ["Linux Administration", "Shell Scripting", "Server Management", "Backup Strategy"],
+      "webDevelopment": ["HTML", "CSS", "JavaScript", "Vue.js", "PHP", "Laravel"],
+      "tools": ["Git", "Docker", "Jenkins", "Vite", "Tailwind CSS"],
+      "soft": ["Problem Solving", "Database Optimization", "Performance Tuning", "Team Collaboration"]
+    },
+    "certifications": [
+      {
+        "title": "Oracle Certified Database Administrator",
+        "issuer": "Oracle Database Administration",
+        "year": "2024",
+        "credential": "MySQL 8.0"
+      }
+    ],
+    "techStack": [
+      { "name": "MySQL", "icon": "🗄️", "category": "Database" },
+      { "name": "PostgreSQL", "icon": "🐘", "category": "Database" },
+      { "name": "MSSQL", "icon": "📊", "category": "Database" },
+      { "name": "Linux", "icon": "🐧", "category": "OS" },
+      { "name": "Docker", "icon": "🐳", "category": "DevOps" },
+      { "name": "Git", "icon": "📦", "category": "VCS" },
+      { "name": "Shell Script", "icon": "💻", "category": "Scripting" },
+      { "name": "Vue.js", "icon": "💚", "category": "Frontend" },
+      { "name": "PHP", "icon": "🐘", "category": "Backend" },
+      { "name": "Laravel", "icon": "🚀", "category": "Framework" },
+      { "name": "Nginx", "icon": "⚙️", "category": "Server" },
+      { "name": "Jenkins", "icon": "🔧", "category": "CI/CD" }
     ]
   }
 }
