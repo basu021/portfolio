@@ -11,6 +11,7 @@ const router = createRouter({
       component: Loader,
       meta: {
         title: 'Portfolio | Basudev Rout - Database Administrator',
+>>>>>>> main
         metaTags: [
           {
             rel: 'canonical',
@@ -19,6 +20,7 @@ const router = createRouter({
           {
             name: 'title',
             content: 'Portfolio | Basudev Rout - Database Administrator'
+>>>>>>> main
           },
           {
             name: 'description',
@@ -28,6 +30,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content: 'portfolio, basudev rout, database administrator, DBA, database management, SQL, database optimization, data administration'
+>>>>>>> main
           },
           {
             name: 'author',
