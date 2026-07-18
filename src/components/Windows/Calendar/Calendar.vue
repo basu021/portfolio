@@ -7,10 +7,31 @@
           <h2 class="text-center font-trebuchet-pixel py-2 capitalize">{{ currentMonthName }} {{ currentYear }}</h2>
           <button @click="nextMonth" class="text-heroic-blue underline font-semibold px-2 mr-2">></button>
         </div>
+        <div class="grid grid-cols-7 text-center text-xs font-semibold mb-1">
+          <div v-for="(label, i) in weekdayLabels" :key="label" :class="i === 0 ? 'text-red-600' : ''">
+            {{ label }}
+          </div>
+        </div>
         <div class="grid grid-cols-7">
-          <div v-for="(day, index) in days" :key="index" :class="isCurrentDate(day.date) ? 'border px-1 py-2 bg-light-yellow' : 'border px-1 py-2'">
-            <div class="font-bold text-sm">{{ day.date.getDate() }}</div>
-            <ul>
+          <div
+            v-for="(day, index) in days"
+            :key="index"
+            :class="[
+              'border px-1 py-2',
+              day.date ? '' : 'bg-gray-50 text-gray-400',
+              day.date && isCurrentDate(day.date) ? 'bg-light-yellow border-amber-400' : '',
+              day.date && isRedDate(day.date) ? 'bg-red-100 text-red-600 font-bold  ring-1 ring-red-200' : ''
+            ]"
+          >
+            <div
+              v-if="day.date"
+              class="font-bold text-sm"
+              :class="day.date && isRedDate(day.date) ? '!text-red-600' : ''"
+            >
+              {{ day.date.getDate() }}
+            </div>
+            <div v-else class="font-bold text-sm">&nbsp;</div>
+            <ul v-if="day.date">
               <li v-for="event in day.events" :key="event.summary" class="min-h-16">
                 <h4
                   class="font-trebuchet-pixel font-semibold text-xs leading-none md:text-sm py-1 md:py-0.5 bg-black rounded-sm text-white md:px-1 px-0.5 md:my-1.5 my-1"
@@ -49,12 +70,43 @@ const events = ref([])
 const days = ref([])
 const currentMonthName = ref('')
 const currentYear = ref('')
+const weekdayLabels = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 const now = new Date()
 const currentMonth = ref(now.getMonth())
 const currentYearValue = ref(now.getFullYear())
 const currentDay = ref(now.getDate())
 
+const redDatesSet = ref(new Set())
+
+function pad(n) {
+  return n < 10 ? '0' + n : '' + n
+}
+
+function formatDateISO(date) {
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`
+}
+
+function isRedDate(date) {
+  if (!date) return false
+  return redDatesSet.value.has(formatDateISO(date))
+}
+
+async function fetchRedDates() {
+  try {
+    const resp = await fetch('/calendar/red-dates-2026.json')
+    if (!resp.ok) throw new Error('Failed to load red-dates JSON')
+    const data = await resp.json()
+    redDatesSet.value = new Set(Array.isArray(data) ? data : [])
+  } catch (err) {
+    console.error('Error fetching red dates JSON:', err)
+  } finally {
+    // Recalculate to ensure the UI updates with red-date classes
+    calculateDaysOfMonth(currentYearValue.value, currentMonth.value)
+  }
+}
+
 onMounted(() => {
+  fetchRedDates()
   fetchEvents()
   calculateDaysOfMonth(currentYearValue.value, currentMonth.value)
 })
@@ -88,8 +140,13 @@ function calculateDaysOfMonth(year, month) {
 
   const lastDayOfMonth = new Date(year, month + 1, 0)
   const daysInMonth = lastDayOfMonth.getDate()
+  const firstDayOfMonth = new Date(year, month, 1).getDay()
 
   days.value = []
+
+  for (let i = 0; i < firstDayOfMonth; i++) {
+    days.value.push({ date: null, events: [] })
+  }
 
   for (let day = 1; day <= daysInMonth; day++) {
     const date = new Date(year, month, day)
@@ -99,14 +156,20 @@ function calculateDaysOfMonth(year, month) {
     })
     days.value.push({ date, events: dayEvents })
   }
+
+  while (days.value.length % 7 !== 0) {
+    days.value.push({ date: null, events: [] })
+  }
 }
 
 function isWeekend(date) {
+  if (!date) return false
   const day = date.getDay()
   return day === 0 || day === 6
 }
 
 function isCurrentDate(date) {
+  if (!date) return false
   const today = new Date()
   return date.getFullYear() === today.getFullYear() && date.getMonth() === today.getMonth() && date.getDate() === today.getDate()
 }
