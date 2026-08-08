@@ -1,4 +1,30 @@
 [
+  {
+    "id": "myProjects",
+    "title": {
+      "en": "My Projects"
+    },
+    "subtitle": {
+      "en": "See all my projects"
+    },
+    "imgSrc": "/img/icons/projects/projects-icon-lg.webp",
+    "onDesktop": true,
+    "resizable": true,
+    "windowsHeaderLogo": true,
+    "isSearchVisible": true,
+    "headerPosition": "left",
+    "headerToolsId": "default",
+    "menuHeaderItemsId": "default",
+    "iconSrc": "/img/icons/projects/projects-icon-sm.webp",
+    "initPositionX": 180,
+    "initPositionY": 100,
+    "initWidth": 660,
+    "initHeight": 500,
+    "minWidth": 200,
+    "minHeight": 160,
+    "component": "MyProjects",
+    "leftMenuType": "default"
+  },
 
   {
     "id": "contact",
